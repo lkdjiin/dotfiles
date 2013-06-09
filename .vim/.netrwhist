@@ -1,0 +1,9 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhist_cnt =7
+let g:netrw_dirhist_1='/home/xavier/devel/ruby/dida/lib/dida/parser'
+let g:netrw_dirhist_2='/home/xavier/devel/ruby/dida/lib/dida'
+let g:netrw_dirhist_3='/home/xavier/devel/ruby/dida/lib/dida/core'
+let g:netrw_dirhist_4='/home/xavier/devel/ruby/speed-env'
+let g:netrw_dirhist_5='/home/xavier/devel/ruby'
+let g:netrw_dirhist_6='/home/xavier/devel-pro/arbre-a-coeur/arbre_a_coeur/app/assets/stylesheets'
+let g:netrw_dirhist_7='/home/xavier/devel/rails/open_bookmark/app/assets/stylesheets/modules'
