@@ -197,4 +197,4 @@ let g:acp_behaviorKeywordLength = 4
 " Parametrer Syntastic.
 "
 " Ne pas se servir du ruby system.
-let g:syntastic_ruby_exec = "/home/xavier/.rvm/rubies/ruby-1.9.3-p374/bin/ruby"
+let g:syntastic_ruby_exec = "/home/xavier/.rvm/rubies/ruby-2.0.0-rc1/bin/ruby"
