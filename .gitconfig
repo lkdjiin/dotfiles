@@ -1,0 +1,14 @@
+[user]
+	name = lkdjiin
+	email = xavier.nayrac@gmail.com
+[github]
+	user = lkdjiin
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+	last = log -3 HEAD
+[color]
+	ui = true
+[core]
+	editor = gvim -f
