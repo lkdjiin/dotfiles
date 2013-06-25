@@ -85,6 +85,8 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.coffee set filetype=coffee
   autocmd BufNewFile,BufRead *.dida set filetype=dida
   autocmd BufNewFile,BufRead Gemfile set filetype=ruby
+  autocmd BufNewFile,BufRead Capfile set filetype=ruby
+  autocmd BufNewFile,BufRead Vagrantfile set filetype=ruby
 
   " Sauvegarder le fichier quand on change d'onglet.
   autocmd FocusLost,TabLeave * :wall
