@@ -8,6 +8,9 @@
 	ci = commit
 	st = status
 	last = log -3 HEAD
+	br = branch
+  changes = diff --name-status -r
+  la = "!git config -l | grep alias | cut -c 7-"
 [color]
 	ui = true
 [core]
