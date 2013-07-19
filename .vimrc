@@ -84,6 +84,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.lg set filetype=logo
   autocmd BufNewFile,BufRead *.coffee set filetype=coffee
   autocmd BufNewFile,BufRead *.dida set filetype=dida
+  autocmd BufNewFile,BufRead *.organ set filetype=organ
   autocmd BufNewFile,BufRead Gemfile set filetype=ruby
   autocmd BufNewFile,BufRead Capfile set filetype=ruby
   autocmd BufNewFile,BufRead Vagrantfile set filetype=ruby
@@ -200,3 +201,10 @@ let g:acp_behaviorKeywordLength = 4
 "
 " Ne pas se servir du ruby system.
 let g:syntastic_ruby_exec = "/home/xavier/.rvm/rubies/ruby-2.0.0-rc1/bin/ruby"
+
+" Fonctions persos
+function RemoveTrailingSpaces()
+  " %s/\s\+$//
+  rubydo gsub /\s+$/, ''
+endfunction
+map <Leader>r :call RemoveTrailingSpaces()<Enter>
