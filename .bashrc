@@ -107,6 +107,8 @@ PATH=$PATH:/var/lib/gems/1.8/bin
 
 PATH=$PATH:/home/xavier/bin
 
+PATH=$PATH:/home/xavier/local/bin/elixir-0.10.0/bin/
+
 # close the very first if of this file
 fi 
 
