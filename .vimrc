@@ -156,10 +156,10 @@ nnoremap <left> <C-w><left>
 nnoremap <right> <C-w><right>
 
 " Redimensioner les fenêtres.
-nnoremap + :resize +2<cr>
-nnoremap - :resize -2<cr>
-nnoremap <A-+> :vertical resize +2<cr>
-nnoremap <A--> :vertical resize -2<cr>
+nnoremap <C-up> :resize +2<cr>
+nnoremap <C-down> :resize -2<cr>
+nnoremap <C-right> :vertical resize +2<cr>
+nnoremap <C-left> :vertical resize -2<cr>
 
 " Dans les recherches, ne pas prendre en compte la casse des
 " caractères, sauf si on saisi une majuscule.
