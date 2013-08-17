@@ -85,6 +85,7 @@ if has("autocmd")
   autocmd BufNewFile,BufRead *.coffee set filetype=coffee
   autocmd BufNewFile,BufRead *.dida set filetype=dida
   autocmd BufNewFile,BufRead *.organ set filetype=organ
+  autocmd BufNewFile,BufRead *.naam set filetype=naam
   autocmd BufNewFile,BufRead *.pir set filetype=pir
   autocmd BufNewFile,BufRead Gemfile set filetype=ruby
   autocmd BufNewFile,BufRead Capfile set filetype=ruby
