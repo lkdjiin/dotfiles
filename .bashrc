@@ -53,7 +53,7 @@ if [ -n "$force_color_prompt" ]; then
 fi
 
 if [ "$color_prompt" = yes ]; then
-    PS1="\[\e[33m\][\w]\[\e[0m\]\$ "
+    PS1="\[\e[33m\][\w]\[\e[0m\]⇒ "
 else
     PS1="[\w]\$ "
 fi
@@ -108,6 +108,8 @@ PATH=$PATH:/var/lib/gems/1.8/bin
 PATH=$PATH:/home/xavier/bin
 
 PATH=$PATH:/home/xavier/local/bin/elixir-0.10.0/bin/
+
+PATH=$PATH:/home/xavier/local/bin/racket-5.3.6/bin/
 
 # close the very first if of this file
 fi 
