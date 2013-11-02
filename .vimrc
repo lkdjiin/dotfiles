@@ -179,6 +179,8 @@ map <Leader>s :split<Enter>
 " Ouvrir le fichier sous le curseur dans un onglet.
 map <Leader>f wgf
 
+map <Leader>p :RainbowParenthesesToggle<Enter>
+
 " Parametrer EasyMotion pour mon clavier bépo
 let g:EasyMotion_leader_key = '<Space>'
 let g:EasyMotion_mapping_f = '<Space>f'
