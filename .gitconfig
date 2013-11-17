@@ -4,13 +4,18 @@
 [github]
 	user = lkdjiin
 [alias]
+	addci = !git add . && git commit -a
 	co = checkout
-	ci = commit
+  ci = commit
+	cia = commit -a
 	st = status
 	last = log -3 HEAD
 	br = branch
   changes = diff --name-status -r
-  la = "!git config -l | grep alias | cut -c 7-"
+  la = !git config -l | sed -n '/alias/s/alias\\.//p' | sort
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  f = "!git ls-files | grep -i"
+  mm = merge-me
 [color]
 	ui = true
 [core]
