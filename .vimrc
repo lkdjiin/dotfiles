@@ -221,6 +221,7 @@ function RemoveTrailingSpaces()
 endfunction
 map <Leader>r :call RemoveTrailingSpaces()<Enter>
 
+" Fold group of lines started with character #.
 function FoldUnixComments()
   set foldmethod=expr
   set foldexpr=getline(v:lnum)=~'^\\s*#'
