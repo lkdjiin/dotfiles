@@ -220,3 +220,8 @@ function RemoveTrailingSpaces()
   rubydo gsub /\s+$/, ''
 endfunction
 map <Leader>r :call RemoveTrailingSpaces()<Enter>
+
+function FoldUnixComments()
+  set foldmethod=expr
+  set foldexpr=getline(v:lnum)=~'^\\s*#'
+endfunction
