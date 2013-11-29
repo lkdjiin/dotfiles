@@ -177,7 +177,6 @@ map <C-Insert> "+y
 let mapleader = "ê"
 " Ouvrir un nouvel onglet
 map <Leader>t :tabnew<Enter>
-map <Leader>s :split<Enter>
 " Ouvrir le fichier sous le curseur dans un onglet.
 map <Leader>f wgf
 
