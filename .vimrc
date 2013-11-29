@@ -173,15 +173,6 @@ map <Insert> "+gP
 " Copier
 map <C-Insert> "+y
 
-" Leader
-let mapleader = "ê"
-" Ouvrir un nouvel onglet
-map <Leader>t :tabnew<Enter>
-" Ouvrir le fichier sous le curseur dans un onglet.
-map <Leader>f wgf
-
-map <Leader>p :RainbowParenthesesToggle<Enter>
-
 " Parametrer EasyMotion pour mon clavier bépo
 let g:EasyMotion_leader_key = '<Space>'
 let g:EasyMotion_mapping_f = '<Space>f'
@@ -214,14 +205,25 @@ let g:acp_behaviorKeywordLength = 4
 let g:syntastic_ruby_exec = "/home/xavier/.rvm/rubies/ruby-2.0.0-rc1/bin/ruby"
 
 " Fonctions persos
+"
 function RemoveTrailingSpaces()
   " %s/\s\+$//
   rubydo gsub /\s+$/, ''
 endfunction
-map <Leader>r :call RemoveTrailingSpaces()<Enter>
 
 " Fold group of lines started with character #.
 function FoldUnixComments()
   set foldmethod=expr
   set foldexpr=getline(v:lnum)=~'^\\s*#'
 endfunction
+
+" Leader
+let mapleader = "ê"
+" Ouvrir un nouvel onglet
+map <Leader>t :tabnew<Enter>
+" Ouvrir le fichier sous le curseur dans un onglet.
+map <Leader>f wgf
+
+map <Leader>p :RainbowParenthesesToggle<Enter>
+
+map <Leader>r :call RemoveTrailingSpaces()<Enter>
