@@ -1,9 +1,6 @@
-" Vim color file
-" Maintainer:	Hans Fugal <hans@fugal.net>
-" Last Change:	$Date: 2004/06/13 19:30:30 $
-" Last Change:	$Date: 2004/06/13 19:30:30 $
-" URL:		http://hans.fugal.net/vim/colors/desert.vim
-" Version:	$Id: desert.vim,v 1.1 2004/06/13 19:30:30 vimboss Exp $
+" Vim color file «Desert Improved», based on desert.
+" Maintainer:	Xavier Nayrac <xavier.nayrac@gmail.com>
+" Version: 1.0
 
 " cool help screens
 " :he group-name
@@ -66,6 +63,8 @@ hi Special	guifg=navajowhite
 hi Ignore	guifg=grey40
 "hi Error
 hi Todo		guifg=orangered guibg=yellow2
+hi Folded	guifg=grey40 guibg=grey20
+hi FoldColumn	guifg=grey40 guibg=grey20
 
 " color terminal definitions
 hi SpecialKey	ctermfg=darkgreen
@@ -86,8 +85,7 @@ hi Visual	cterm=reverse
 hi VisualNOS	cterm=bold,underline
 hi WarningMsg	ctermfg=1
 hi WildMenu	ctermfg=0 ctermbg=3
-hi Folded	ctermfg=darkgrey ctermbg=NONE
-hi FoldColumn	ctermfg=darkgrey ctermbg=NONE
+"hi FoldColumn	ctermfg=darkgrey ctermbg=NONE
 hi DiffAdd	ctermbg=4
 hi DiffChange	ctermbg=5
 hi DiffDelete	cterm=bold ctermfg=4 ctermbg=6
