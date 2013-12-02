@@ -211,12 +211,6 @@ function RemoveTrailingSpaces()
   rubydo gsub /\s+$/, ''
 endfunction
 
-" Fold group of lines started with character #.
-function FoldUnixComments()
-  set foldmethod=expr
-  set foldexpr=getline(v:lnum)=~'^\\s*#'
-endfunction
-
 " Leader
 let mapleader = "ê"
 " Ouvrir un nouvel onglet
@@ -227,3 +221,5 @@ map <Leader>f wgf
 map <Leader>p :RainbowParenthesesToggle<Enter>
 
 map <Leader>r :call RemoveTrailingSpaces()<Enter>
+
+map <F5> :FoldComments<Enter>
