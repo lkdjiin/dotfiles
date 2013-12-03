@@ -96,6 +96,9 @@ if has("autocmd")
   " Sauvegarder le fichier quand on change d'onglet.
   autocmd FocusLost,TabLeave * :wall
 
+  " La chaîne de caractères pour les commentaires. Certains type de
+  " fichier n'ont pas la bonne.
+  autocmd FileType racket set commentstring=;\ %s
 else
 
   set autoindent		" always set autoindenting on
