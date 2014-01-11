@@ -215,7 +215,7 @@ function RemoveTrailingSpaces()
 endfunction
 
 " Leader
-let mapleader = "ê"
+let mapleader = ","
 " Ouvrir un nouvel onglet
 map <Leader>t :tabnew<Enter>
 " Ouvrir le fichier sous le curseur dans un onglet.
