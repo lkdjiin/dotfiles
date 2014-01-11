@@ -135,6 +135,9 @@ set foldmethod=marker
 " c'est plus simple pour atteindre l'onglet voulu avec #gt.
 set guitablabel=[%N]\ %t\ %M
 
+" Digraphs
+set digraph
+
 " Remappage du clavier pour la disposition bépo.
 source ~/.vim/vimrc.bepo.vim
 
