@@ -65,8 +65,8 @@ if has("autocmd")
   autocmd FileType text setlocal textwidth=78
 
   " Surligner les chars au dela de la 80e colonne.
-  au BufWinEnter * let w:m1=matchadd('LineNr', '\%<81v.\%>73v', -1)
-  au BufWinEnter * let w:m2=matchadd('Error', '\%>80v.\+', -1)
+  " au BufWinEnter * let w:m1=matchadd('LineNr', '\%<81v.\%>73v', -1)
+  " au BufWinEnter * let w:m2=matchadd('Error', '\%>80v.\+', -1)
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -105,6 +105,7 @@ else
 
 endif " has("autocmd")
 
+
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
 " Only define it when not defined already.
@@ -121,7 +122,6 @@ set expandtab
 
 " Look de la fenêtre.
 set guifont=Inconsolata-g\ 15
-" set guifont=Liberation\ Mono\ 15
 set lines=35 columns=86
 colorscheme desertimp
 set number
@@ -210,6 +210,23 @@ let g:acp_behaviorKeywordLength = 4
 " Ne pas se servir du ruby system.
 let g:syntastic_ruby_exec = "/home/xavier/.rvm/rubies/ruby-2.0.0-rc1/bin/ruby"
 
+" Parametrer Airline
+set laststatus=2
+let g:airline_theme='wombat'
+if !exists('g:airline_symbols')
+  let g:airline_symbols = {}
+endif
+let g:airline_left_sep = ''
+let g:airline_left_alt_sep = ''
+let g:airline_right_sep = ''
+let g:airline_right_alt_sep = ''
+let g:airline_symbols.branch = ''
+let g:airline_symbols.readonly = ''
+let g:airline_symbols.linenr = ''
+let g:airline_detect_modified=1
+let g:airline_section_z = ' %l / %L : %c '
+let g:airline_section_c = '%t'
+
 " Fonctions persos
 "
 function RemoveTrailingSpaces()
@@ -229,3 +246,5 @@ map <Leader>p :RainbowParenthesesToggle<Enter>
 map <Leader>r :call RemoveTrailingSpaces()<Enter>
 
 map <F5> :FoldComments<Enter>
+let &colorcolumn=join(range(73,80),",")
+highlight ColorColumn guibg=#404040
