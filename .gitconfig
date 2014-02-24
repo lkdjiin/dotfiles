@@ -1,22 +1,27 @@
 [user]
-	name = lkdjiin
-	email = xavier.nayrac@gmail.com
+  name = lkdjiin
+  email = xavier.nayrac@gmail.com
 [github]
-	user = lkdjiin
+  user = lkdjiin
 [alias]
-	addci = !git add . && git commit -a
-	co = checkout
-  ci = commit
-	cia = commit -a
-	st = status
-	last = log -3 HEAD
-	br = branch
+  addci = !git add . && git commit -av
+  br = branch
+  bra = branch -a
   changes = diff --name-status -r
-  la = !git config -l | sed -n '/alias/s/alias\\.//p' | sort
-  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  ci = commit -v
+  cia = commit -a -v
+  co = checkout
+  ds = diff --stat
   f = "!git ls-files | grep -i"
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  last = log -3 HEAD
+  list-aliases = !git config -l | sed -n '/alias/s/alias\\.//p' | sort
+  logp = log --oneline --decorate
   mm = merge-me
+  pull-changes = diff master master@{1}
+  pull-stat-changes = diff --stat master master@{1}
+  st = status -sb
 [color]
-	ui = true
+  ui = true
 [core]
-	editor = gvim -f
+  editor = gvim -f
