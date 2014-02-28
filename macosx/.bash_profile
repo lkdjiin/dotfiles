@@ -21,32 +21,32 @@ fi
 ### Prompt
 
 RED="\[\e[1;31m\]"
-LIGHT_GRAY="\[\e[1;39m\]"
+LIGHT_GRAY="\[\e[1;35m\]"
 COLOR_NONE="\[\e[0m\]"
 
-function ruby_version {
+ruby_version() {
   rbenv version | sed -e "s/ (set.*$//"
 }
 
-# function git_branch() {
+# git_branch() {
 #   branch=$(git branch 2>/dev/null | cut -d' ' -f2)
 #   if [ "$?" == "0" ]; then echo $branch; fi
 # }
 
 # Return the prompt symbol to use, colorized based on the return value of the
 # previous command.
-function set_prompt_symbol () {
+set_prompt_symbol() {
   if test $1 -eq 0 ; then
-    PROMPT_SYMBOL="⇒"
+    PROMPT_SYMBOL="●"
   else
-    PROMPT_SYMBOL="${RED}$1⇒${COLOR_NONE}"
+    PROMPT_SYMBOL="${RED}█ $1${COLOR_NONE}"
   fi
 }
 
-function set_bash_prompt {
+set_bash_prompt() {
   set_prompt_symbol $?
 
-  PS1="\n⇒ ${LIGHT_GRAY}\w [\$(ruby_version)] \$(__git_ps1)${COLOR_NONE}\n${PROMPT_SYMBOL} "
+  PS1="\n${LIGHT_GRAY}● \A \w [\$(ruby_version)] \$(__git_ps1)${COLOR_NONE}\n${PROMPT_SYMBOL} "
   PS2="… > "
 }
 
@@ -63,4 +63,6 @@ export EDITOR='mvim -f --nomru -c "au VimLeave * !open -a Terminal"'
 
 ### History
 
+HISTFILESIZE=2000
 HISTSIZE=2000
+export PATH=/usr/local/sbin:$PATH
