@@ -26,6 +26,10 @@ shopt -s checkwinsize
 # make less more friendly for non-text input files, see lesspipe(1)
 #[ -x /usr/bin/lesspipe ] && eval "$(SHELL=/bin/sh lesspipe)"
 
+if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
+    . /etc/bash_completion
+fi
+
 # set variable identifying the chroot you work in (used in the prompt below)
 if [ -z "$debian_chroot" ] && [ -r /etc/debian_chroot ]; then
     debian_chroot=$(cat /etc/debian_chroot)
@@ -36,28 +40,40 @@ case "$TERM" in
     xterm-color) color_prompt=yes;;
 esac
 
-# uncomment for a colored prompt, if the terminal has the capability; turned
-# off by default to not distract the user: the focus in a terminal window
-# should be on the output of commands, not on the prompt
-force_color_prompt=yes
+RED="\[\e[1;31m\]"
+COLOR_PROMPT="\[\e[1;35m\]"
+COLOR_PROMPT_LIGHT="\[\e[0;35m\]"
+COLOR_NONE="\[\e[0m\]"
 
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-  # We have color support; assume it's compliant with Ecma-48
-  # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-  # a case would tend to support setf rather than setaf.)
-  color_prompt=yes
-    else
-  color_prompt=
-    fi
-fi
+ruby_version()
+{
+  ~/.rvm/bin/rvm-prompt i v
+}
 
-if [ "$color_prompt" = yes ]; then
-    PS1="\[\e[1;35m\][\w]\[\e[0m\]\n⇒ "
-else
-    PS1="[\w]\$ "
-fi
-unset color_prompt force_color_prompt
+# Return the prompt symbol to use, colorized based on the return value of the
+# previous command.
+set_prompt_symbol()
+{
+  if test $1 -eq 0 ; then
+    PROMPT_SYMBOL="●"
+  else
+    PROMPT_SYMBOL="${RED}█ $1${COLOR_NONE}"
+  fi
+}
+
+set_bash_prompt()
+{
+  set_prompt_symbol $?
+
+  PS1="${COLOR_PROMPT}● \
+${COLOR_PROMPT_LIGHT}\A \
+${COLOR_PROMPT}[\w]\
+${COLOR_PROMPT_LIGHT}\$(__git_ps1) (\$(ruby_version)) \
+${COLOR_NONE}\n${PROMPT_SYMBOL} "
+  PS2="… > "
+}
+
+PROMPT_COMMAND=set_bash_prompt
 
 # If this is an xterm set the title to user@host:dir
 case "$TERM" in
@@ -78,12 +94,6 @@ if [ -f ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
 
-# enable programmable completion features (you don't need to enable
-# this, if it's already enabled in /etc/bash.bashrc and /etc/profile
-# sources /etc/bash.bashrc).
-if [ -f /etc/bash_completion ] && ! shopt -oq posix; then
-    . /etc/bash_completion
-fi
 
 # Je ne devrais pas avoir à ajouter le chemin suivant, mais l'installation de rubygems
 # n'a pas bien fonctionnée.
