@@ -3,9 +3,9 @@
 
 alias ls='ls -FG'
 alias lsa='ls -FGA'
-alias la='ls -FGA'
-alias lsl='ls -FGl'
-alias ll='ls -FGl'
+alias la='lsa'
+alias lsl='ls -FGlh'
+alias ll='lsl'
 
 alias tree='tree -FAC'
 alias dirtree='tree -d'
