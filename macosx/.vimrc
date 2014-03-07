@@ -16,6 +16,7 @@ call vundle#rc()
 Bundle 'gmarik/vundle'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
+Bundle 'git@github.com:t9md/vim-choosewin.git'
 
 " Vim-Airline settings.
 set laststatus=2
@@ -31,6 +32,28 @@ let g:airline_symbols.branch = ''
 let g:airline_symbols.readonly = ''
 let g:airline_section_z = ' %l / %L : %c '
 let g:airline_section_c = '%t %m'
+
+" Choosewin plugin settings.
+"
+" invoke with '-'
+nmap  -  <Plug>(choosewin)
+" use overlay feature
+let g:choosewin_overlay_enable = 1
+" workaround for overlay font broken on mutibyte buffer.
+let g:choosewin_overlay_clear_multibyte = 1
+" tmux like overlay color
+let g:choosewin_color_overlay = {
+  \ 'gui': ['DodgerBlue3', 'DodgerBlue3' ],
+  \ 'cterm': [ 25, 25 ]
+  \ }
+let g:choosewin_color_overlay_current = {
+  \ 'gui': ['firebrick1', 'firebrick1' ],
+  \ 'cterm': [ 124, 124 ]
+  \ }
+let g:choosewin_blink_on_land      = 0 " dont' blink at land
+let g:choosewin_statusline_replace = 0 " don't replace statusline
+let g:choosewin_tabline_replace    = 0 " don't replace tabline
+
 
 
 set nostartofline
@@ -93,8 +116,8 @@ if has("autocmd")
   autocmd FileType text setlocal textwidth=78
 
   " Surligner les chars au dela de la 80e colonne.
-  au BufWinEnter * let w:m1=matchadd('LineNr', '\%<81v.\%>73v', -1)
-  au BufWinEnter * let w:m2=matchadd('Error', '\%>80v.\+', -1)
+  " au BufWinEnter * let w:m1=matchadd('LineNr', '\%<81v.\%>73v', -1)
+  " au BufWinEnter * let w:m2=matchadd('Error', '\%>80v.\+', -1)
 
   " When editing a file, always jump to the last known cursor position. "{{{
   " Don't do it when the position is invalid or when inside an event handler
@@ -234,3 +257,5 @@ map <Leader>a :wall<CR>:call RunAllSpecs()<CR>
 imap àà <Esc>
 vmap àà <Esc>
 
+let &colorcolumn=join(range(73,80),",")
+highlight ColorColumn guibg=#404040
