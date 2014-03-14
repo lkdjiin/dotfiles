@@ -17,6 +17,14 @@ Bundle 'gmarik/vundle'
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'git@github.com:t9md/vim-choosewin.git'
+Bundle 'git@github.com:matze/vim-move.git'
+Bundle 'git@github.com:tpope/vim-markdown.git'
+Bundle 'git@github.com:vim-scripts/AutoComplPop.git'
+Bundle 'git@github.com:tpope/vim-commentary.git'
+Bundle 'git@github.com:tpope/vim-endwise.git'
+Bundle 'git@github.com:tpope/vim-surround.git'
+Bundle 'git@github.com:tpope/vim-repeat.git'
+Bundle 'git@github.com:lkdjiin/vim-foldcomments.git'
 
 " Vim-Airline settings.
 set laststatus=2
@@ -54,6 +62,8 @@ let g:choosewin_blink_on_land      = 0 " dont' blink at land
 let g:choosewin_statusline_replace = 0 " don't replace statusline
 let g:choosewin_tabline_replace    = 0 " don't replace tabline
 
+" vim-move plugin settings
+let g:move_key_modifier = 'C'
 
 
 set nostartofline
