@@ -6,6 +6,31 @@ endif
 " Use Vim settings, rather than Vi settings (much better!).
 " This must be first, because it changes other options as a side effect.
 set nocompatible
+filetype off
+
+" set the runtime path to include Vundle and initialize
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'git@github.com:vim-scripts/AutoComplPop.git'
+Bundle 'git@github.com:kien/ctrlp.vim.git'
+Bundle 'git@github.com:kien/rainbow_parentheses.vim.git'
+Bundle 'git@github.com:msanders/snipmate.vim.git'
+Bundle 'git@github.com:scrooloose/syntastic.git'
+Bundle 'git@github.com:vim-scripts/SyntaxRange.git'
+Bundle 'git@github.com:bling/vim-airline.git'
+Bundle 'git@github.com:tpope/vim-commentary.git'
+Bundle 'git@github.com:skammer/vim-css-color.git'
+Bundle 'git@github.com:elixir-lang/vim-elixir.git'
+Bundle 'git@github.com:tpope/vim-endwise.git'
+Bundle 'git@github.com:lkdjiin/vim-foldcomments.git'
+Bundle 'git@github.com:tpope/vim-fugitive.git'
+Bundle 'git@github.com:tpope/vim-haml.git'
+Bundle 'git@github.com:wlangstroth/vim-racket.git'
+Bundle 'git@github.com:tpope/vim-repeat.git'
+Bundle 'git@github.com:tpope/vim-surround.git'
+Bundle 'git@github.com:Lokaltog/vim-easymotion.git'
 
 set nostartofline
 
@@ -37,10 +62,6 @@ inoremap <C-U> <C-G>u<C-U>
 if has('mouse')
   set mouse=a
 endif
-
-" Permet de mettre les plugins dans leurs dossiers respectifs
-" sous ~/.vim/bundle/ 
-execute pathogen#infect()
 
 " Switch syntax highlighting on, when the terminal has colors
 " Also switch on highlighting the last used search pattern.
@@ -225,13 +246,12 @@ let g:airline_symbols.readonly = ''
 let g:airline_symbols.linenr = ''
 let g:airline_detect_modified=1
 let g:airline_section_z = ' %l / %L : %c '
-let g:airline_section_c = '%t'
+let g:airline_section_c = '%t %m'
 
 " Fonctions persos
 "
 function RemoveTrailingSpaces()
-  " %s/\s\+$//
-  rubydo gsub /\s+$/, ''
+  %s/\s\+$//
 endfunction
 
 " Leader
