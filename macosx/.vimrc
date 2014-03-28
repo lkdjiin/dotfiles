@@ -14,6 +14,7 @@ call vundle#rc()
 " let Vundle manage Vundle
 " required!
 Bundle 'gmarik/vundle'
+
 Bundle 'bling/vim-airline'
 Bundle 'tpope/vim-fugitive'
 Bundle 'git@github.com:t9md/vim-choosewin.git'
@@ -22,13 +23,16 @@ Bundle 'git@github.com:tpope/vim-markdown.git'
 Bundle 'git@github.com:vim-scripts/AutoComplPop.git'
 Bundle 'git@github.com:tpope/vim-commentary.git'
 Bundle 'git@github.com:tpope/vim-endwise.git'
-Bundle 'git@github.com:tpope/vim-surround.git'
+
+" A fork of vim-surround usable with bépo layout
+Bundle 'git@github.com:lkdjiin/vim-surround.git'
+
 Bundle 'git@github.com:tpope/vim-repeat.git'
 Bundle 'git@github.com:lkdjiin/vim-foldcomments.git'
+Bundle 'git@github.com:morhetz/gruvbox.git'
 
 " Vim-Airline settings.
 set laststatus=2
-let g:airline_theme='wombat'
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
@@ -85,7 +89,7 @@ set incsearch		" do incremental searching
 set guioptions-=T
 
 set cursorline
-hi CursorLine guibg=#494949
+" hi CursorLine guibg=#494949
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
@@ -177,8 +181,12 @@ set expandtab
 
 " Look de la fenêtre.
 set guifont=Inconsolata\ for\ Powerline:h22
-" set guifont=Monaco:h18
-colorscheme desertimp
+
+" Trying gruvbox color scheme
+colorscheme gruvbox
+set bg=dark
+" colorscheme desertimp
+
 set number
 set foldcolumn=1
 
@@ -263,9 +271,6 @@ map <Leader>n :wall<CR>:call RunNearestSpec()<CR>
 map <Leader>l :wall<CR>:call RunLastSpec()<CR>
 map <Leader>a :wall<CR>:call RunAllSpecs()<CR>
 
-" Test pour remplacer Escape.
-imap àà <Esc>
-vmap àà <Esc>
-
 let &colorcolumn=join(range(73,80),",")
-highlight ColorColumn guibg=#404040
+" highlight ColorColumn guibg=#404040
+
