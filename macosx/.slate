@@ -1,0 +1,47 @@
+config defaultToCurrentScreen true
+config nudgePercentOf screenSize
+config resizePercentOf screenSize
+# Shows app icons and background apps, spreads icons in the same place.
+config windowHintsShowIcons true
+config windowHintsIgnoreHiddenWindows false
+config windowHintsSpread true
+config windowHintsFontSize 120
+config windowHintsDuration 10
+config windowHintsBackgroundColor 30;30;30;0.9
+
+
+# Alias' directive: alias name value
+alias full move screenOriginX;screenOriginY screenSizeX;screenSizeY
+alias lefthalf move screenOriginX;screenOriginY screenSizeX/2;screenSizeY
+alias righthalf move screenOriginX+screenSizeX/2;screenOriginY screenSizeX/2;screenSizeY
+alias tophalf move screenOriginX;screenOriginY screenSizeX;screenSizeY/2
+alias bottomhalf move screenOriginX;screenOriginY+screenSizeY/2 screenSizeX;screenSizeY/2
+alias topleft corner top-left resize:screenSizeX/2;screenSizeY/2
+alias topright corner top-right resize:screenSizeX/2;screenSizeY/2
+alias bottomleft corner bottom-left resize:screenSizeX/2;screenSizeY/2
+alias bottomright corner bottom-right resize:screenSizeX/2;screenSizeY/2
+
+
+# Location - Sets the window to the specified location.
+bind return:shift;cmd ${full}
+bind k:shift;cmd ${tophalf}
+bind j:shift;cmd ${bottomhalf}
+bind h:shift;cmd ${lefthalf}
+bind l:shift;cmd ${righthalf}
+bind y:shift;cmd ${topleft}
+bind n:shift;cmd ${bottomleft}
+bind p:shift;cmd ${topright}
+bind .:shift;cmd ${bottomright}
+
+
+# Focus Bindings
+bind right:shift;cmd focus right
+bind left:shift;cmd focus left
+bind up:shift;cmd focus up
+bind down:shift;cmd focus down
+# bind up:cmd;alt focus behind
+# bind down:cmd;alt focus behind
+
+
+# Window Hints
+bind esc:cmd hint TSRNMCEIUA;
