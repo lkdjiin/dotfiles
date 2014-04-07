@@ -32,6 +32,7 @@ Bundle 'git@github.com:lkdjiin/vim-foldcomments.git'
 Bundle 'git@github.com:morhetz/gruvbox.git'
 Bundle 'git@github.com:phmongeau/vim-slate.git'
 Bundle 'git@github.com:MattesGroeger/vim-bookmarks.git'
+Bundle 'git@github.com:airblade/vim-gitgutter.git'
 
 " Vim-Airline settings.
 set laststatus=2
@@ -272,6 +273,15 @@ map <Leader>c :wall<CR>:call RunCurrentSpecFile()<CR>
 map <Leader>n :wall<CR>:call RunNearestSpec()<CR>
 map <Leader>l :wall<CR>:call RunLastSpec()<CR>
 map <Leader>a :wall<CR>:call RunAllSpecs()<CR>
+
+" Testing GitGutter
+nmap <Leader>gg :GitGutterToggle<Enter>
+nmap <Leader>gh :GitGutterLineHighlightsToggle<Enter>
+nmap <Leader>gn <Plug>GitGutterNextHunk
+nmap <Leader>gp <Plug>GitGutterPrevHunk
+nmap <Leader>gs <Plug>GitGutterStageHunk
+nmap <Leader>gu <Plug>GitGutterRevertHunk
+nmap <Leader>gv <Plug>GitGutterPreviewHunk
 
 let &colorcolumn=join(range(73,80),",")
 " highlight ColorColumn guibg=#404040
