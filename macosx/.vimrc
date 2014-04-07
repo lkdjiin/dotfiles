@@ -31,6 +31,7 @@ Bundle 'git@github.com:tpope/vim-repeat.git'
 Bundle 'git@github.com:lkdjiin/vim-foldcomments.git'
 Bundle 'git@github.com:morhetz/gruvbox.git'
 Bundle 'git@github.com:phmongeau/vim-slate.git'
+Bundle 'git@github.com:MattesGroeger/vim-bookmarks.git'
 
 " Vim-Airline settings.
 set laststatus=2
