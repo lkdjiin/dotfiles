@@ -283,6 +283,10 @@ nmap <Leader>gs <Plug>GitGutterStageHunk
 nmap <Leader>gu <Plug>GitGutterRevertHunk
 nmap <Leader>gv <Plug>GitGutterPreviewHunk
 
+" Test some stuff for a todo file.
+nnoremap <Leader>tt I[ ]<Space><Esc>
+nnoremap <Leader>tx :s/^\(\s*\)\[ \]/\1[x]/<CR>
+
 let &colorcolumn=join(range(73,80),",")
 " highlight ColorColumn guibg=#404040
 
