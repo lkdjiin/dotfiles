@@ -13,10 +13,12 @@
   co = checkout
   ds = diff --stat
   f = "!git ls-files | grep -i"
+  fixup = commit --amend -C HEAD
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   last = log -3 HEAD
   list-aliases = !git config -l | sed -n '/alias/s/alias\\.//p' | sort
   logp = log --oneline --decorate
+  logpp = log --pretty=oneline
   mm = merge-me
   pull-changes = diff master master@{1}
   pull-stat-changes = diff --stat master master@{1}
