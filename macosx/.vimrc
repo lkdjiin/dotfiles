@@ -28,11 +28,19 @@ Bundle 'git@github.com:tpope/vim-endwise.git'
 Bundle 'git@github.com:lkdjiin/vim-surround.git'
 
 Bundle 'git@github.com:tpope/vim-repeat.git'
-Bundle 'git@github.com:lkdjiin/vim-foldcomments.git'
+" Bundle 'git@github.com:lkdjiin/vim-foldcomments.git'
 Bundle 'git@github.com:morhetz/gruvbox.git'
 Bundle 'git@github.com:phmongeau/vim-slate.git'
 Bundle 'git@github.com:MattesGroeger/vim-bookmarks.git'
 Bundle 'git@github.com:airblade/vim-gitgutter.git'
+Bundle 'git@github.com:junegunn/vader.vim.git'
+Bundle 'git@github.com:luke-gru/vim-riml.git'
+Bundle 'git@github.com:JuliaLang/julia-vim.git'
+Bundle 'git@github.com:rking/ag.vim.git'
+Bundle 'git@github.com:zoeesilcock/vim-caniuse.git'
+Bundle 'git@github.com:terryma/vim-multiple-cursors.git'
+Bundle 'git@github.com:godlygeek/tabular.git'
+Bundle 'git@github.com:luochen1990/rainbow.git'
 
 " Vim-Airline settings.
 set laststatus=2
@@ -251,8 +259,8 @@ let g:acp_behaviorKeywordLength = 4
 " Fonctions persos "{{{
 " "}}}
 function! RemoveTrailingSpaces()
-  " %s/\s\+$//
-  rubydo gsub /\s+$/, ''
+  %s/\s\+$//
+  " rubydo gsub /\s+$/, ''
 endfunction
 
 " Leader
@@ -262,7 +270,8 @@ map <Leader>t :tabnew<Enter>
 " Ouvrir le fichier sous le curseur dans un onglet.
 map <Leader>f wgf
 
-map <Leader>p :RainbowParenthesesToggle<Enter>
+let g:rainbow_active = 0
+map <Leader>p :RainbowToggle<Enter>
 
 map <Leader>r :call RemoveTrailingSpaces()<Enter>
 
