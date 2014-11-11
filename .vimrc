@@ -271,6 +271,30 @@ map <Leader>p :RainbowParenthesesToggle<Enter>
 
 map <Leader>r :call RemoveTrailingSpaces()<Enter>
 
+nmap <Leader>q" :QuickMarkdownTitle1<Enter>
+nmap <Leader>q« :QuickMarkdownTitle2<Enter>
+nmap <Leader>q» :QuickMarkdownTitle3<Enter>
+nmap <Leader>q( :QuickMarkdownTitle4<Enter>
+nmap <Leader>q) :QuickMarkdownTitle5<Enter>
+nmap <Leader>q@ :QuickMarkdownTitle6<Enter>
+nmap <Leader>ql :QuickMarkdownLink<Enter>
+nmap <Leader>qm :QuickMarkdownMore<Enter>
+imap <C-q>" <C-o>:QuickMarkdownTitle1<Enter>
+imap <C-q>« <C-o>:QuickMarkdownTitle2<Enter>
+imap <C-q>» <C-o>:QuickMarkdownTitle3<Enter>
+imap <C-q>( <C-o>:QuickMarkdownTitle4<Enter>
+imap <C-q>) <C-o>:QuickMarkdownTitle5<Enter>
+imap <C-q>@ <C-o>:QuickMarkdownTitle6<Enter>
+imap <C-q>l <C-o>:QuickMarkdownLink<Enter>
+
+" Test vim-refactor
+nmap <Leader>rr :ExtractMethod<Enter>
+
 map <F5> :FoldComments<Enter>
+
+" Test some stuff for a todo file.
+nnoremap <Leader>tt I[ ]<Space><Esc>
+nnoremap <Leader>tx :s/^\(\s*\)\[ \]/\1[x]/<CR>
+
 let &colorcolumn=join(range(73,80),",")
 highlight ColorColumn guibg=#404040
