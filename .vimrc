@@ -30,6 +30,10 @@ Bundle 'git@github.com:wlangstroth/vim-racket.git'
 Bundle 'git@github.com:tpope/vim-repeat.git'
 Bundle 'git@github.com:lkdjiin/vim-surround.git'
 Bundle 'git@github.com:Lokaltog/vim-easymotion.git'
+Bundle 'git@github.com:junegunn/vader.vim.git'
+Bundle 'git@github.com:JuliaLang/julia-vim.git'
+
+Bundle 'git@github.com:morhetz/gruvbox.git'
 
 set nostartofline
 
