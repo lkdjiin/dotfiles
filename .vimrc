@@ -149,7 +149,8 @@ set expandtab
 " Look de la fenêtre.
 set guifont=Inconsolata-g\ 15
 set lines=35 columns=86
-colorscheme desertimp
+colorscheme gruvbox
+set bg=dark
 set number
 set foldcolumn=1
 
