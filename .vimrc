@@ -256,7 +256,7 @@ let g:airline_section_c = '%t %m'
 
 " Fonctions persos
 "
-function RemoveTrailingSpaces()
+function! RemoveTrailingSpaces()
   %s/\s\+$//
 endfunction
 
