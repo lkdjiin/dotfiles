@@ -28,7 +28,7 @@ Bundle 'git@github.com:tpope/vim-fugitive.git'
 Bundle 'git@github.com:tpope/vim-haml.git'
 Bundle 'git@github.com:wlangstroth/vim-racket.git'
 Bundle 'git@github.com:tpope/vim-repeat.git'
-Bundle 'git@github.com:tpope/vim-surround.git'
+Bundle 'git@github.com:lkdjiin/vim-surround.git'
 Bundle 'git@github.com:Lokaltog/vim-easymotion.git'
 
 set nostartofline
