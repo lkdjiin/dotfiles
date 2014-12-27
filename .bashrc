@@ -107,6 +107,9 @@ PATH=$PATH:/home/xavier/local/bin/racket-5.3.6/bin/
 
 PATH=$PATH:/home/xavier/local/bin/shoes3/dist/
 
+PATH=$PATH:/home/xavier/bin/julia/
+
+PATH=$PATH:/usr/local/lib/
 
 # close the very first if of this file
 fi 
