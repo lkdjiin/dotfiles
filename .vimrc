@@ -163,6 +163,9 @@ set guitablabel=[%N]\ %t\ %M
 " Digraphs
 set digraph
 
+" Makes yank copy to X clipboard.
+set clipboard=unnamedplus
+
 " Remappage du clavier pour la disposition bépo.
 source ~/.vim/vimrc.bepo.vim
 
