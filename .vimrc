@@ -32,6 +32,7 @@ Bundle 'git@github.com:lkdjiin/vim-surround.git'
 Bundle 'git@github.com:Lokaltog/vim-easymotion.git'
 Bundle 'git@github.com:junegunn/vader.vim.git'
 Bundle 'git@github.com:JuliaLang/julia-vim.git'
+Bundle 'git@github.com:raichoo/haskell-vim.git'
 
 Bundle 'git@github.com:morhetz/gruvbox.git'
 
