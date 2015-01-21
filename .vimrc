@@ -149,9 +149,8 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-" Look de la fenêtre. [GUI]
-set guifont=Inconsolata-g\ 15
-set lines=35 columns=86
+" Chargement de la config dépendante de la machine.
+source ~/.vim/vimrc.local.vim
 
 colorscheme gruvbox
 set bg=dark
