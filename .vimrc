@@ -21,18 +21,27 @@ Bundle 'git@github.com:vim-scripts/SyntaxRange.git'
 Bundle 'git@github.com:bling/vim-airline.git'
 Bundle 'git@github.com:tpope/vim-commentary.git'
 Bundle 'git@github.com:skammer/vim-css-color.git'
-Bundle 'git@github.com:elixir-lang/vim-elixir.git'
 Bundle 'git@github.com:tpope/vim-endwise.git'
 Bundle 'git@github.com:lkdjiin/vim-foldcomments.git'
 Bundle 'git@github.com:tpope/vim-fugitive.git'
-Bundle 'git@github.com:tpope/vim-haml.git'
-Bundle 'git@github.com:wlangstroth/vim-racket.git'
 Bundle 'git@github.com:tpope/vim-repeat.git'
 Bundle 'git@github.com:lkdjiin/vim-surround.git'
 Bundle 'git@github.com:Lokaltog/vim-easymotion.git'
 Bundle 'git@github.com:junegunn/vader.vim.git'
+Bundle 'git@github.com:t9md/vim-choosewin.git'
+Bundle 'git@github.com:MattesGroeger/vim-bookmarks.git'
+Bundle 'git@github.com:airblade/vim-gitgutter.git'
+Bundle 'git@github.com:godlygeek/tabular.git'
+Bundle 'https://github.com/emilsoman/spec-outline.vim.git'
+
+Bundle 'git@github.com:tpope/vim-haml.git'
+Bundle 'git@github.com:elixir-lang/vim-elixir.git'
+Bundle 'git@github.com:wlangstroth/vim-racket.git'
 Bundle 'git@github.com:JuliaLang/julia-vim.git'
 Bundle 'git@github.com:raichoo/haskell-vim.git'
+Bundle 'git@github.com:matze/vim-markdown.git'
+Bundle 'https://github.com/wting/rust.vim.git'
+Bundle 'git@github.com:sudar/vim-arduino-syntax.git'
 
 Bundle 'git@github.com:morhetz/gruvbox.git'
 
@@ -49,7 +58,7 @@ set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 
-" Retirer la toolbar
+" Retirer la toolbar [GUI]
 set guioptions-=T
 
 " Don't use Ex mode, use Q for formatting
@@ -85,10 +94,6 @@ if has("autocmd")
 
   " For all text files set 'textwidth' to 78 characters.
   autocmd FileType text setlocal textwidth=78
-
-  " Surligner les chars au dela de la 80e colonne.
-  " au BufWinEnter * let w:m1=matchadd('LineNr', '\%<81v.\%>73v', -1)
-  " au BufWinEnter * let w:m2=matchadd('Error', '\%>80v.\+', -1)
 
   " When editing a file, always jump to the last known cursor position.
   " Don't do it when the position is invalid or when inside an event handler
@@ -144,11 +149,13 @@ set tabstop=2
 set shiftwidth=2
 set expandtab
 
-" Look de la fenêtre.
+" Look de la fenêtre. [GUI]
 set guifont=Inconsolata-g\ 15
 set lines=35 columns=86
+
 colorscheme gruvbox
 set bg=dark
+
 set number
 set foldcolumn=1
 
@@ -160,7 +167,7 @@ set foldmethod=marker
 " c'est plus simple pour atteindre l'onglet voulu avec #gt.
 set guitablabel=[%N]\ %t\ %M
 
-" Digraphs
+" Digraphs [GUI ?]
 set digraph
 
 " Makes yank copy to X clipboard.
@@ -207,6 +214,13 @@ map <Insert> "+gP
 " Copier
 map <C-Insert> "+y
 
+" Choosewin plugin settings
+"
+" Invoke with '-'
+nmap - <Plug>(choosewin)
+let g:choosewin_blink_on_land = 0
+let g:choosewin_tabline_replace = 0
+
 " Parametrer EasyMotion pour mon clavier bépo
 let g:EasyMotion_leader_key = '<Space>'
 let g:EasyMotion_mapping_f = '<Space>f'
@@ -236,7 +250,7 @@ let g:acp_behaviorKeywordLength = 4
 " Parametrer Syntastic.
 "
 " Ne pas se servir du ruby system.
-let g:syntastic_ruby_exec = "/home/xavier/.rvm/rubies/ruby-2.0.0-rc1/bin/ruby"
+let g:syntastic_ruby_exec = "/home/xavier/.rvm/rubies/ruby-2.2.0/bin/ruby"
 
 " Parametrer Airline
 set laststatus=2
@@ -254,6 +268,9 @@ let g:airline_symbols.linenr = ''
 let g:airline_detect_modified=1
 let g:airline_section_z = ' %l / %L : %c '
 let g:airline_section_c = '%t %m'
+
+" Parametrer spec-outline
+let g:spec_outline_orientation = 'top'
 
 " Fonctions persos
 "
@@ -290,6 +307,9 @@ imap <C-q>l <C-o>:QuickMarkdownLink<Enter>
 
 " Test vim-refactor
 nmap <Leader>rr :ExtractMethod<Enter>
+
+" spec-outline
+map <Leader>so :SpecOutlineToggle<Enter>
 
 map <F5> :FoldComments<Enter>
 
