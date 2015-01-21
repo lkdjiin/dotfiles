@@ -58,9 +58,6 @@ set ruler		" show the cursor position all the time
 set showcmd		" display incomplete commands
 set incsearch		" do incremental searching
 
-" Retirer la toolbar [GUI]
-set guioptions-=T
-
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
@@ -152,22 +149,11 @@ set expandtab
 " Chargement de la config dépendante de la machine.
 source ~/.vim/vimrc.local.vim
 
-colorscheme gruvbox
-set bg=dark
-
 set number
 set foldcolumn=1
 
 " Utiliser des marqueurs pour le folding
 set foldmethod=marker
-
-" Ne mettre que les noms de fichier dans les onglets et
-" l'éventuelle marque de modification. Prefixer par le numéro de l'onglet,
-" c'est plus simple pour atteindre l'onglet voulu avec #gt.
-set guitablabel=[%N]\ %t\ %M
-
-" Digraphs [GUI ?]
-set digraph
 
 " Makes yank copy to X clipboard.
 set clipboard=unnamedplus
@@ -246,27 +232,8 @@ let g:acp_behaviorKeywordLength = 4
 " On peut essayer ça à la place
 "let g:acp_behaviorKeywordIgnores = []
 
-" Parametrer Syntastic.
-"
-" Ne pas se servir du ruby system.
-let g:syntastic_ruby_exec = "/home/xavier/.rvm/rubies/ruby-2.2.0/bin/ruby"
-
 " Parametrer Airline
 set laststatus=2
-let g:airline_theme='wombat'
-if !exists('g:airline_symbols')
-  let g:airline_symbols = {}
-endif
-let g:airline_left_sep = ''
-let g:airline_left_alt_sep = ''
-let g:airline_right_sep = ''
-let g:airline_right_alt_sep = ''
-let g:airline_symbols.branch = ''
-let g:airline_symbols.readonly = ''
-let g:airline_symbols.linenr = ''
-let g:airline_detect_modified=1
-let g:airline_section_z = ' %l / %L : %c '
-let g:airline_section_c = '%t %m'
 
 " Parametrer spec-outline
 let g:spec_outline_orientation = 'top'
@@ -315,6 +282,3 @@ map <F5> :FoldComments<Enter>
 " Test some stuff for a todo file.
 nnoremap <Leader>tt I[ ]<Space><Esc>
 nnoremap <Leader>tx :s/^\(\s*\)\[ \]/\1[x]/<CR>
-
-let &colorcolumn=join(range(73,80),",")
-highlight ColorColumn guibg=#404040
