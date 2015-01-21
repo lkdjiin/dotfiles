@@ -29,3 +29,4 @@
   ui = true
 [core]
   editor = gvim -f
+  excludesfile = ~/.gitignore_global
