@@ -1,0 +1,8 @@
+tryCatch({
+  options(width = as.integer(system('tput cols', intern = TRUE)))
+}, error = function(err) {
+  write("Width set to 80.", stderr());
+  options(width = 80)
+})
+
+# vim: set filetype=r:
