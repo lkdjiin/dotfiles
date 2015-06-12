@@ -5,4 +5,20 @@ tryCatch({
   options(width = 80)
 })
 
+
+now <- function() Sys.time()
+
+. <- function() .Last.value
+
+if(!exists('paste0')) {
+  paste0 <<- function(...) paste(..., sep='')
+}
+
+"%+%" <- function(x, y) {
+  paste(x, y, sep='')
+}
+
+tr <- function(...) chartr(...)
+
+
 # vim: set filetype=r:
