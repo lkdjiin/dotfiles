@@ -131,6 +131,7 @@ else
 
 endif " has("autocmd")
 
+let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
@@ -282,3 +283,6 @@ map <F5> :FoldComments<Enter>
 " Test some stuff for a todo file.
 nnoremap <Leader>tt I[ ]<Space><Esc>
 nnoremap <Leader>tx :s/^\(\s*\)\[ \]/\1[x]/<CR>
+
+" Toggle line highlighting.
+map <Leader>l :set cursorline!<Enter>
