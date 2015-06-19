@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+
+zip -r dotfiles .bash_aliases .bash_history .bash_logout .bash_profile .bashrc DAILY-ROUTINE.md .gemrc .gitconfig .gitignore_global .gvimrc .inputrc .irbrc livres à lire.md matos electro metrics.ods perles.md Plans.md .Rhistory .Rprofile .Rutils .rvmrc Sauvegarde.md série.md .speedenv .ssh TODO-HOT TODO-MEDIUM TODO-ONEDAY tweets .vim .vimrc
