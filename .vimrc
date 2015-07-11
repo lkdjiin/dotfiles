@@ -125,6 +125,9 @@ if has("autocmd")
   autocmd FileType racket set commentstring=;\ %s
 
   autocmd BufWritePost ~/.vimrc source $MYVIMRC
+
+  autocmd FileType r set tabstop=4
+  autocmd FileType r set shiftwidth=4
 else
 
   set autoindent		" always set autoindenting on
