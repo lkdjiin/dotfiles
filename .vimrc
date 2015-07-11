@@ -134,7 +134,7 @@ else
 
 endif " has("autocmd")
 
-let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html']
+let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html', 'bash=sh', 'r']
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
