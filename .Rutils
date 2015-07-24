@@ -5,7 +5,6 @@ tryCatch({
   options(width = 80)
 })
 
-
 now <- function() Sys.time()
 
 . <- function() .Last.value
@@ -18,7 +17,19 @@ if(!exists('paste0')) {
   paste(x, y, sep='')
 }
 
+# Alias to chartr.
 tr <- function(...) chartr(...)
 
+# Get the number of NAs in a vector.
+na_sum <- function(x) sum(is.na(x))
+
+# Alias to na_sum.
+nas <- function(x) na_sum(x)
+
+# Get the proportion (between 0 and 1) of NAs in a vector.
+na_prop <- function(x) na_sum(x) / length(x)
+
+# Get the percentage of NAs in a vector.
+na_percent <- function(x) na_prop(x) * 100
 
 # vim: set filetype=r:
