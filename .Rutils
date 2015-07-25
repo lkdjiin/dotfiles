@@ -18,7 +18,7 @@ if(!exists('paste0')) {
 }
 
 # Alias to chartr.
-tr <- function(...) chartr(...)
+tr <- function(x, old, new) chartr(old, new, x)
 
 # Get the number of NAs in a vector.
 na_sum <- function(x) sum(is.na(x))
