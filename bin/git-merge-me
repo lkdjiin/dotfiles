@@ -1,0 +1,5 @@
+#!/bin/bash
+
+BRANCH_TO_MERGE=`git rev-parse --abbrev-ref HEAD`
+git checkout master
+git merge $BRANCH_TO_MERGE

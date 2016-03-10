@@ -125,12 +125,16 @@ if has("autocmd")
   autocmd FileType racket set commentstring=;\ %s
 
   autocmd BufWritePost ~/.vimrc source $MYVIMRC
+
+  autocmd FileType r set tabstop=4
+  autocmd FileType r set shiftwidth=4
 else
 
   set autoindent		" always set autoindenting on
 
 endif " has("autocmd")
 
+let g:markdown_fenced_languages = ['coffee', 'css', 'erb=eruby', 'javascript', 'js=javascript', 'json=javascript', 'ruby', 'sass', 'xml', 'html', 'bash=sh', 'r']
 
 " Convenient command to see the difference between the current buffer and the
 " file it was loaded from, thus the changes you made.
@@ -282,3 +286,6 @@ map <F5> :FoldComments<Enter>
 " Test some stuff for a todo file.
 nnoremap <Leader>tt I[ ]<Space><Esc>
 nnoremap <Leader>tx :s/^\(\s*\)\[ \]/\1[x]/<CR>
+
+" Toggle line highlighting.
+map <Leader>l :set cursorline!<Enter>

@@ -1,0 +1,35 @@
+tryCatch({
+  options(width = as.integer(system('tput cols', intern = TRUE)))
+}, error = function(err) {
+  write("Width set to 80.", stderr());
+  options(width = 80)
+})
+
+now <- function() Sys.time()
+
+. <- function() .Last.value
+
+if(!exists('paste0')) {
+  paste0 <<- function(...) paste(..., sep='')
+}
+
+"%+%" <- function(x, y) {
+  paste(x, y, sep='')
+}
+
+# Alias to chartr.
+tr <- function(x, old, new) chartr(old, new, x)
+
+# Get the number of NAs in a vector.
+na_sum <- function(x) sum(is.na(x))
+
+# Alias to na_sum.
+nas <- function(x) na_sum(x)
+
+# Get the proportion (between 0 and 1) of NAs in a vector.
+na_prop <- function(x) na_sum(x) / length(x)
+
+# Get the percentage of NAs in a vector.
+na_percent <- function(x) na_prop(x) * 100
+
+# vim: set filetype=r:

@@ -19,7 +19,6 @@ let &colorcolumn=join(range(73,80),",")
 highlight ColorColumn guibg=#404040
 
 " Airline
-let g:airline_theme='wombat'
 if !exists('g:airline_symbols')
   let g:airline_symbols = {}
 endif
