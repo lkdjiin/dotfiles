@@ -14,6 +14,8 @@ alias tree='tree -CA'
 alias dirtree='tree -d'
 # List Tree, a tree of just one level.
 alias lt='tree -L 1'
+# Same as `lt` but including hidden files and directories.
+alias lta='tree -L 1 -a'
 
 #alias grep='grep --color=auto'
 #alias fgrep='fgrep --color=auto'
