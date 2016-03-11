@@ -1,5 +1,5 @@
-# Listing files and directories
-###############################
+# Listing files and directories.
+################################
 
 alias ls='ls -F --color=auto'
 alias ll='ls -lh'
@@ -38,5 +38,10 @@ alias railsgit='railsg integration_test'
 alias railsgm='railsg migration'
 
 alias binstall='bundle install'
+
+# Aliases for git.
+##################
+
+alias ga='git add .'
 
 # vim: ft=sh
