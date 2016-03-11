@@ -29,5 +29,5 @@
 [color]
   ui = true
 [core]
-  excludesfile = ~/.gitignore_global
   editor = vim -f
+  excludesfile = /home/xavier/.gitignore_global
