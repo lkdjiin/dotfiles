@@ -14,6 +14,7 @@
   ds = diff --stat
   f = "!git ls-files | grep -i"
   fixup = commit --amend -C HEAD
+  fix = commit -v -m 'fix'
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
   last = log -3 HEAD
   list-aliases = !git config -l | sed -n '/alias/s/alias\\.//p' | sort
