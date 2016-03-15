@@ -1,6 +1,6 @@
 [user]
-  name = Xavier Nayrac
-  email = xavier.nayrac@gmail.com
+	name = Xavier Nayrac
+	email = xavier.nayrac@gmail.com
 [github]
   user = lkdjiin
 [alias]
@@ -16,6 +16,8 @@
   fixup = commit --amend -C HEAD
   fix = commit -v -m 'fix'
   hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  # `ic` is like `ci` for dyslexics.
+  ic = commit -v
   last = log -3 HEAD
   list-aliases = !git config -l | sed -n '/alias/s/alias\\.//p' | sort
   logp = log --oneline --decorate
