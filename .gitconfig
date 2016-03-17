@@ -25,8 +25,8 @@
   mm = merge-me
   pull-changes = diff master master@{1}
   pull-stat-changes = diff --stat master master@{1}
-  pushf = push -f
-  push-f = push -f
+  pushf = push --force-with-lease
+  push-f = push --force-with-lease
   st = status -sb
 [color]
   ui = true
