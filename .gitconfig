@@ -29,6 +29,7 @@
   pushf = push --force-with-lease
   push-f = push --force-with-lease
   rb = branch
+  skip = rebase --skip
   st = status -sb
 [color]
   ui = true
