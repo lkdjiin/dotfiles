@@ -27,6 +27,7 @@
   pull-stat-changes = diff --stat master master@{1}
   pushf = push --force-with-lease
   push-f = push --force-with-lease
+  rb = branch
   st = status -sb
 [color]
   ui = true
