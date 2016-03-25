@@ -11,6 +11,7 @@
   ci = commit -v
   cia = commit -a -v
   co = checkout
+  continue = rebase --continue
   ds = diff --stat
   f = "!git ls-files | grep -i"
   fixup = commit --amend -C HEAD
