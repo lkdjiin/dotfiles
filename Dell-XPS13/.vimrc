@@ -137,6 +137,8 @@ if has("autocmd")
 
   autocmd FileType r set tabstop=4
   autocmd FileType r set shiftwidth=4
+  autocmd FileType fish set tabstop=4
+  autocmd FileType fish set shiftwidth=4
 else
 
   set autoindent		" always set autoindenting on
