@@ -47,6 +47,7 @@ Plugin 'https://github.com/matze/vim-markdown.git'
 Plugin 'https://github.com/wting/rust.vim.git'
 Plugin 'https://github.com/sudar/vim-arduino-syntax.git'
 Plugin 'https://github.com/rhysd/vim-crystal.git'
+Plugin 'dag/vim-fish'
 
 Plugin 'https://github.com/morhetz/gruvbox.git'
 
