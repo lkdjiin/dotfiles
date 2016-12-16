@@ -1,0 +1,124 @@
+" Minimal configuration to be put on distant servers.
+" Use it:
+"     vim -u ~/.xav_vimrc file_to_edit
+"
+
+set nocompatible
+filetype off
+
+if &shell =~# 'fish$'
+    set shell=/bin/bash
+endif
+
+set nostartofline
+set backspace=indent,eol,start
+set nobackup
+set history=50
+set ruler
+set showcmd
+set incsearch
+
+inoremap <C-U> <C-G>u<C-U>
+
+if has('mouse')
+  set mouse=a
+endif
+
+if &t_Co > 2 || has("gui_running")
+  syntax on
+  set hlsearch
+endif
+
+if has("autocmd")
+  filetype plugin indent on
+  autocmd FileType text setlocal textwidth=78
+  autocmd BufReadPost *
+    \ if line("'\"") > 1 && line("'\"") <= line("$") |
+    \   exe "normal! g`\"" |
+    \ endif
+  autocmd FocusLost,TabLeave * :wall
+else
+  set autoindent
+endif
+
+if !exists(":DiffOrig")
+  command DiffOrig vert new | set bt=nofile | r # | 0d_ | diffthis
+    \ | wincmd p | diffthis
+endif
+
+" set tabstop=2
+" set shiftwidth=2
+set expandtab
+set number
+set clipboard=unnamedplus
+set ignorecase smartcase
+
+" ----------------------------------------------------------------------
+" Mappage clavier personnel.
+"
+
+" {W} -> [É]
+noremap é w
+noremap É W
+" Corollaire, pour effacer/remplacer un mot quand on n’est pas au début
+" (daé / laé). Attention, cela diminue la réactivité du {A}…
+noremap aé aw
+noremap aÉ aW
+" Pour faciliter les manipulations de fenêtres, on utilise {W} comme
+" un Ctrl+W :
+noremap w <C-w>
+noremap W <C-w><C-w>
+" [HJKL] -> {CTSR}
+" ————————————————
+" {cr} = « gauche / droite »
+noremap c h
+noremap r l
+" {ts} = « haut / bas »
+noremap t j
+noremap s k
+" {CR} = « haut / bas de l'écran »
+noremap C H
+noremap R L
+" {TS} = « joindre / aide »
+noremap T J
+noremap S K
+" {HJKL} <- [CTSR]
+" ————————————————
+" {J} = « Jusqu'à »    (j = suivant, J = précédant)
+noremap j t
+noremap J T
+" {L} = « Change »     (l = attend un mvt, L = jusqu'à la fin de ligne)
+noremap l c
+noremap L C
+" {H} = « Remplace »   (h = un caractère slt, H = reste en « Remplace »)
+noremap h r
+noremap H R
+" {K} = « Substitue »  (k = caractère, K = ligne)
+noremap k s
+noremap K S
+" Corollaire : correction orthographique
+noremap ]k ]s
+noremap [k [s
+" Désambiguation de {g}
+" —————————————————————
+" onglet précédant / suivant
+noremap gb gT
+noremap gé gt
+
+" <> en direct
+" ————————————
+noremap « <
+noremap » >
+
+" ----------------------------------------------------------------------
+function! RemoveTrailingSpaces()
+  %s/\s\+$//
+endfunction
+
+" Leader
+let mapleader = ","
+
+map <Leader>r :call RemoveTrailingSpaces()<Enter>
+map <F5> :FoldComments<Enter>
+" Toggle line highlighting.
+map <Leader>l :set cursorline!<Enter>
